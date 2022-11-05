@@ -1,7 +1,7 @@
 import React from "react";
 
-const TurkeyMap = () => {
+const TurkeyMaps = () => {
   return <div>TurkeyMap</div>;
 };
 
-export default TurkeyMap;
+export default TurkeyMaps;

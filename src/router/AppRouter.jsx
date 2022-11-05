@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import About from "../pages/About";
 import Home from "../pages/Home";
-import TurkeyMap from "../pages/TurkeyMap";
-import TurkeyProvince from "../pages/TurkeyProvince";
+import TurkeyMaps from "../pages/TurkeyMaps";
+import TurkeyProvinces from "../pages/TurkeyProvinces";
 
 const AppRouter = () => {
   return (
@@ -13,8 +13,8 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="turkeymap" element={<TurkeyMap />} />
-        <Route path="turkeyprovince" element={<TurkeyProvince />} />
+        <Route path="turkeymaps" element={<TurkeyMaps />} />
+        <Route path="turkeyprovinces" element={<TurkeyProvinces />} />
       </Routes>
     </BrowserRouter>
   );

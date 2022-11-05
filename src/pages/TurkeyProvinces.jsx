@@ -1,7 +1,7 @@
 import React from "react";
 
-const TurkeyProvince = () => {
+const TurkeyProvinces = () => {
   return <div>TurkeyProvince</div>;
 };
 
-export default TurkeyProvince;
+export default TurkeyProvinces;
