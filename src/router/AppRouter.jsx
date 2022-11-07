@@ -5,6 +5,7 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import TurkeyMaps from "../pages/TurkeyMaps";
 import TurkeyProvinces from "../pages/TurkeyProvinces";
+import Weather from "../pages/Weather";
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="about" element={<About />} />
         <Route path="turkeymaps" element={<TurkeyMaps />} />
         <Route path="turkeyprovinces" element={<TurkeyProvinces />} />
+        <Route path="/weather:cityName" element={<Weather />} />
       </Routes>
     </BrowserRouter>
   );
