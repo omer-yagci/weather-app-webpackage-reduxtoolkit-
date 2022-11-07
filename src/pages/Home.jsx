@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -13,9 +12,15 @@ const Home = () => {
   const turkeyProvinceHandler = () => {
     navigate("turkeyprovinces");
   };
-
-  console.log(weatherList + "HOMEPAGEASDAS");
-  const { name } = weatherList;
+  const {
+    name,
+    weather: {
+      0: { description, icon },
+    },
+    main: { temp, humidity },
+    wind: { speed },
+  } = weatherList;
+  const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
   return (
     <div className="App">
@@ -44,10 +49,28 @@ const Home = () => {
 
       <section className="mt-[1rem]">
         {loading && <h1>SEASDASd</h1>}
+
         {!loading && (
-          <h1>
-            {name.includes("Province") ? name.replace("Province", " ") : name}
-          </h1>
+          <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <img src={iconURL} alt="icon" />
+
+            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+              {name?.includes("Province")
+                ? name.replace("Province", " ")
+                : name}
+            </h5>
+
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
+              {`${temp}°C`}
+            </p>
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
+              {description}
+            </p>
+            <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
+              {speed}
+            </p>
+            <p> {`${humidity}%`}</p>
+          </div>
         )}
       </section>
     </div>
