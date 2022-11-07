@@ -9,10 +9,10 @@ const initialState = {
 export const getWeather = createAsyncThunk(
   "weather/getWeather",
   async (ınputValue) => {
-    const apiKey = "07ccc6c8229f822f8f5f8dbbc0bfbc92";
-    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${ınputValue}&units=metric&APPID=${apiKey}`;
-
     try {
+      const apiKey = "07ccc6c8229f822f8f5f8dbbc0bfbc92";
+      const URL = `https://api.openweathermap.org/data/2.5/weather?q=${ınputValue}&units=metric&APPID=${apiKey}`;
+
       const { data } = await axios.get(URL);
       console.log(data);
       return data;
@@ -34,10 +34,9 @@ const WeatherSlice = createSlice({
     [getWeather.pending]: (state, action) => {
       state.loading = true;
     },
-    [getWeather.fulfilled]: (state, { payload }) => {
+    [getWeather.fulfilled]: (state, action) => {
+      state.weatherList = action?.payload;
       state.loading = false;
-
-      state.weatherList = payload;
     },
     [getWeather.rejected]: (state, action) => {
       state.loading = false;
@@ -45,6 +44,6 @@ const WeatherSlice = createSlice({
   },
 });
 
-export const { clearWeatherData } = WeatherSlice.actions;
+export const { clearWeatherData, startVal } = WeatherSlice.actions;
 
 export default WeatherSlice.reducer;
