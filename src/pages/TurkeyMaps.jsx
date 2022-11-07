@@ -7,20 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const TurkeyMaps = () => {
-  const [cityName, setCityName] = useState("Ankara");
+  const [cityName, setCityName] = useState("ankara");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const { weatherList } = useSelector((state) => state.weather);
-
   const ClickHandler = () => {
     dispatch(getWeather(cityName));
-    navigate("/");
+    setTimeout(() => {
+      navigate(`/weather${cityName}`);
+    }, 500);
   };
-  useEffect(() => {
-    dispatch(getWeather("Ankara"));
-  });
 
   // const renderCity = (cityComponent, cityData) => (
   //   <Tooltip title={cityData.name} key={cityData.id}>
@@ -28,6 +25,9 @@ const TurkeyMaps = () => {
   //   </Tooltip>
   // );
 
+  useEffect(() => {
+    dispatch(getWeather());
+  });
   return (
     <>
       <h5>{cityName}</h5>
