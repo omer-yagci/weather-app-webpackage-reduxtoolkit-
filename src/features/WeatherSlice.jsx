@@ -37,7 +37,7 @@ const WeatherSlice = createSlice({
     [getWeather.fulfilled]: (state, { payload }) => {
       state.loading = false;
 
-      state.avatarList = payload;
+      state.weatherList = payload;
     },
     [getWeather.rejected]: (state, action) => {
       state.loading = false;
@@ -45,6 +45,6 @@ const WeatherSlice = createSlice({
   },
 });
 
-export const { clearAvatarList } = WeatherSlice.actions;
+export const { clearWeatherData } = WeatherSlice.actions;
 
 export default WeatherSlice.reducer;
