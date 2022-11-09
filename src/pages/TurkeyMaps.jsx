@@ -4,19 +4,18 @@ import TurkeyMap from "turkey-map-react";
 import { useDispatch } from "react-redux";
 import { getWeather } from "../features/WeatherSlice";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const TurkeyMaps = () => {
-  const [cityName, setCityName] = useState("ankara");
+  const [cityName, setCityName] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const ClickHandler = () => {
     dispatch(getWeather(cityName));
-    setTimeout(() => {
-      navigate(`/weather${cityName}`);
-    }, 500);
+
+    navigate(`/weather${cityName}`);
   };
 
   // const renderCity = (cityComponent, cityData) => (
@@ -25,9 +24,9 @@ const TurkeyMaps = () => {
   //   </Tooltip>
   // );
 
-  useEffect(() => {
-    dispatch(getWeather());
-  });
+  // useEffect(() => {
+  //   dispatch(getWeather());
+  // });
   return (
     <>
       <h5>{cityName}</h5>
