@@ -1,13 +1,16 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(false);
+  // const hambugerHandler = () => {
+  //   setShow((show) => !show);
+  // };
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-lime-500 p-6">
+      <nav className="flex items-start justify-between flex-wrap bg-lime-500 p-6">
         <div className="flex items-center  text-white mr-6">
           <svg
             className="fill-current h-8 w-8 mr-2"
@@ -29,7 +32,7 @@ const Navbar = () => {
         </div>
         <div className="block lg:hidden">
           <button
-            onClick={() => setShow(!show)}
+            // onClick={hambugerHandler}
             className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
           >
             <svg
@@ -42,28 +45,31 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
-            <NavLink
-              className="block mt-4 lg:inline-block text-lg lg:mt-0 text-black-200 hover:text-white mr-4"
-              to="/"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              className="block mt-4 lg:inline-block lg:mt-0  text-base text-black-200 hover:text-white mr-4"
-              to="turkeymaps"
-            >
-              Turkey Map
-            </NavLink>
-            <NavLink
-              className="block mt-4 lg:inline-block lg:mt-0 text-base text-black-200 hover:text-white mr-4"
-              to="turkeyprovinces"
-            >
-              Turkey Provinces
-            </NavLink>
-          </div>
-          {show && (
+        <div className="w-full block flex-grow lg:flex lg:items-start lg:w-auto">
+          {
+            <div className="text-sm lg:flex-grow ">
+              <NavLink
+                className="block mt-4 lg:inline-block text-lg lg:mt-0 text-black-200 hover:text-white mr-4"
+                to="/"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                className="block mt-4 lg:inline-block lg:mt-0  text-base text-black-200 hover:text-white mr-4"
+                to="turkeymaps"
+              >
+                Turkey Map
+              </NavLink>
+              <NavLink
+                className="block mt-4 lg:inline-block lg:mt-0 text-base text-black-200 hover:text-white mr-4"
+                to="turkeyprovinces"
+              >
+                Turkey Provinces
+              </NavLink>
+            </div>
+          }
+
+          {
             <div>
               <a
                 target="_blank"
@@ -74,7 +80,7 @@ const Navbar = () => {
                 Github
               </a>
             </div>
-          )}
+          }
         </div>
       </nav>
     </div>
