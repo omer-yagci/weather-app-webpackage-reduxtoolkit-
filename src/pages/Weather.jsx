@@ -12,7 +12,7 @@ const Weather = () => {
     navigate("/turkeyprovinces");
   };
   return (
-    <div>
+    <div className="App">
       <main className="mt-5">
         <button
           className="bg-yellow-300 hover:bg-yellow-100 text-black font-bold py-2 px-4 border-2 border-indigo-700 rounded mr-5"
@@ -29,12 +29,17 @@ const Weather = () => {
           List of Cities
         </button>
       </main>
+      <h1 className="text-2xl">{`${
+        weatherList.name.includes("Province")
+          ? weatherList.name.replace("Province", "")
+          : weatherList.name
+      }province weather information`}</h1>
 
-      <section className="mt-[1rem]">
+      <section className="mt-[0.5rem]  flex items-center justify-center">
         {loading && <h1>SEASDASd</h1>}
 
         {!loading && (
-          <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;">
+          <div className="p-6 w-[17rem] bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;">
             <img
               src={`http://openweathermap.org/img/wn/${weatherList.weather[0].icon}@2x.png`}
               alt="icon"

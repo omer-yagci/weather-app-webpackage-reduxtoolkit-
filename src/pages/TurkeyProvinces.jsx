@@ -1,9 +1,9 @@
 import React from "react";
 import useTurkeyCities from "use-turkey-cities";
-import { Select, Option } from "@material-tailwind/react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getWeather } from "../features/WeatherSlice";
+// import { Select, Option } from "@material-tailwind/react";
 
 const TurkeyProvinces = () => {
   const { cities, city, setCity } = useTurkeyCities();
@@ -14,9 +14,9 @@ const TurkeyProvinces = () => {
     setCity(event.target.value);
   };
   return (
-    <div className="App m-5">
+    <div className="App m-5 bg-col ">
       <form
-        className="flex  justify-center items-center flex-col "
+        className="flex justify-center items-center flex-col "
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(getWeather(city));
@@ -25,7 +25,7 @@ const TurkeyProvinces = () => {
         }}
       >
         <select
-          className="bg-blue-500 bg-opacity-50 w-72 p-2 "
+          className="bg-blue-200 bg-opacity-50 w-72 p-[0.75rem]  rounded"
           label="Select Version"
           onChange={selectChangeHandler}
           value={city}

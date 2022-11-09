@@ -31,6 +31,7 @@ const TurkeyMaps = () => {
           // cityWrapper={renderCity}
           onClick={ClickHandler}
           onHover={({ name }) => setCityName(`${name}`)}
+          customStyle={{ idleColor: "orange", hoverColor: "lightgreen" }}
         />
       </div>
     </>
