@@ -29,11 +29,7 @@ const Weather = () => {
           List of Cities
         </button>
       </main>
-      <h1 className="text-2xl">{`${
-        weatherList.name.includes("Province")
-          ? weatherList.name.replace("Province", "")
-          : weatherList.name
-      }province weather information`}</h1>
+      <h1 className="text-2xl">{`${weatherList.name} weather information`}</h1>
 
       <section className="mt-[0.5rem]  flex items-center justify-center">
         {loading && <h1>SEASDASd</h1>}
