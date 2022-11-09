@@ -14,7 +14,6 @@ const TurkeyMaps = () => {
 
   const ClickHandler = () => {
     dispatch(getWeather(cityName));
-
     navigate(`/weather${cityName}`);
   };
 
@@ -24,9 +23,6 @@ const TurkeyMaps = () => {
   //   </Tooltip>
   // );
 
-  // useEffect(() => {
-  //   dispatch(getWeather());
-  // });
   return (
     <>
       <h5>{cityName}</h5>
