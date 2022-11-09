@@ -15,28 +15,6 @@ const Home = () => {
     navigate("turkeyprovinces");
   };
 
-  // const {
-  //   name,
-  //   weather: {
-  //     0: { description, icon },
-  //   },
-  //   main: { temp, humidity },
-  //   wind: { speed },
-  // } = weatherList;
-
-  // const {
-  //   name,
-  //   // weather: {
-  //   //   0: { description, icon },
-  //   // },
-  //   main: { temp, humidity },
-  //   wind: { speed },
-  // } = weatherList;
-
-  // const { description, icon } = weatherList.weather[0];
-
-  // const iconURL = `http://openweathermap.org/img/wn/${icon ? icon : ""}@2x.png`;
-
   console.log(weatherList);
 
   return (
@@ -64,14 +42,19 @@ const Home = () => {
         </button>
       </main>
 
-      <section className="mt-[1rem]">
+      <section className="mt-[0.5rem]  flex items-center justify-center">
         {loading && <h1>SEASDASd</h1>}
         {!loading && (
-          <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img src={weatherList.weather[0].icon} alt="icon" />
+          <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-lg shadow-cyan-500/50 dark:border-gray-700 w-72 ">
+            <img
+              src={`http://openweathermap.org/img/wn/${weatherList.weather[0].icon}@2x.png`}
+              alt="icon"
+            />
 
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              {weatherList.name}
+              {weatherList.name.includes("Province")
+                ? weatherList.name.replace("Province", "")
+                : weatherList.name}
             </h5>
 
             <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
