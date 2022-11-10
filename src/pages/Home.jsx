@@ -15,7 +15,7 @@ const Home = () => {
     navigate("turkeyprovinces");
   };
 
-  console.log(weatherList);
+  // console.log(weatherList);
 
   return (
     <div className="App">
