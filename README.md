@@ -47,15 +47,15 @@ To clone and run this application, you'll need [Git](https://git-scm.com)
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/omer-yagci/BooksStoreReactFirebase.git
+$ git clone  https://github.com/omer-yagci/weather-app-webpackage-reduxtoolkit-.git
 
 # Install dependencies
-    $ npm i
+    $ yarn add
 
 # Add .env file for API Keys and Firebase App Config
 
 # Run the app
-    $ npm start
+    $ yarn start
 ```
 
 ## Contact
