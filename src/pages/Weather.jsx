@@ -35,15 +35,15 @@ const Weather = () => {
 
       <section className="mt-[0.5rem]  flex items-center justify-center">
         {loading && (
-          <div class="w-72 h-60 border-2 rounded-md mx-auto mt-20">
-            <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5 bg-green-300 ">
-              <div class="w-12 bg-yellow-300 h-12 rounded-full "></div>
-              <div class="flex flex-col space-y-3">
-                <div class="w-36 bg-yellow-300 h-6 rounded-md "></div>
-                <div class="w-24 bg-yellow-300 h-6 rounded-md "></div>
-                <div class="w-24 bg-yellow-300 h-6 rounded-md "></div>
-                <div class="w-24 bg-yellow-300 h-6 rounded-md "></div>
-                <div class="w-24 bg-yellow-300 h-6 rounded-md "></div>
+          <div className="w-72 h-60 border-2 rounded-md mx-auto mt-20">
+            <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5 bg-green-300 ">
+              <div className="w-12 bg-yellow-300 h-12 rounded-full "></div>
+              <div className="flex flex-col space-y-3">
+                <div className="w-36 bg-yellow-300 h-6 rounded-md "></div>
+                <div className="w-24 bg-yellow-300 h-6 rounded-md "></div>
+                <div className="w-24 bg-yellow-300 h-6 rounded-md "></div>
+                <div className="w-24 bg-yellow-300 h-6 rounded-md "></div>
+                <div className="w-24 bg-yellow-300 h-6 rounded-md "></div>
               </div>
             </div>
           </div>
